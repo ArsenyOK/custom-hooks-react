@@ -1,16 +1,18 @@
 import React from "react";
 import useFetch from "../../customHooks/useFetch";
 import useValue from "../../customHooks/useValue";
+import useWindowDimensions from "../../customHooks/useWindowDimensions";
 
 const Post = () => {
   const { data, loading } = useFetch();
   const [value, setValue] = useValue();
+  const size = useWindowDimensions();
 
   if (loading) {
     return <>Loading...</>;
   }
 
-  console.log(value, "value");
+  console.log(size, "size");
 
   return (
     <div>
